@@ -1,0 +1,39 @@
+.schedule-wrapper {
+  overflow-x: auto;
+}
+
+.schedule-table, .totals-table {
+  width: 100%;
+  border-collapse: collapse;
+  user-select: none;
+}
+
+.schedule-table th, .schedule-table td,
+.totals-table th,  .totals-table td {
+  border: 1px solid #bbb;
+  padding: 4px;
+  text-align: center;
+}
+
+/* colour blocks */
+.cell.roti     { background: #FFB74D; }
+.cell.dalRice  { background: #81C784; }
+.cell.full     { background: #64B5F6; }
+.cell.absent   { background: #E0E0E0; }
+
+.blank { background: #fafafa; }
+
+/* sticky first column for wide prints */
+.sticky-col {
+  position: sticky;
+  left: 0;
+  background: #fff;
+}
+
+/* Print‑only rules */
+@media print {
+  body *     { visibility: hidden; }
+  .schedule-table, .schedule-table *,
+  .totals-table,  .totals-table  * { visibility: visible; }
+  .schedule-table { position: absolute; left: 0; top: 0; width: 100%; }
+}
